@@ -14,5 +14,3 @@ def solution(rank, attendance):
     
     answer = 10000 * a + 100 * b + c
     return answer
-                            
-            
