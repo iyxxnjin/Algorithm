@@ -1,12 +1,11 @@
 def solution(d, budget):
     d.sort()
+    sum = 0
     count = 0
-
+    
     for amount in d:
-        if budget >= amount:
-            budget -= amount
+        sum += amount
+        if sum <= budget:
             count += 1
-        else:
-            break
 
     return count
