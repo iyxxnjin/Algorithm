@@ -3,29 +3,18 @@ def solution(answers):
     giveup2 = [2,1,2,3,2,4,2,5]
     giveup3 = [3,3,1,1,2,2,4,4,5,5]
     
-    answer = []
-    count1 = count2 = count3 = 0
+    guesses = [giveup1, giveup2, giveup3]
+    count = [0, 0, 0]
     
     for i in range(len(answers)):
-        if answers[i] == giveup1[i % len(giveup1)]:
-            count1 += 1
-            
-        if answers[i] == giveup2[i % len(giveup2)]:
-            count2 += 1
-            
-        if answers[i] == giveup3[i % len(giveup3)]:
-            count3 += 1
-            
-    max_score = (max(count1, count2, count3))
+        for j, guess in enumerate(guesses):
+            if answers[i] == guess[i % len(guess)]:
+                count[j] += 1
     
-    if count1 == max_score:
-        answer.append(1)
-    if count2 == max_score:
-        answer.append(2)
-    if count3 == max_score:
-        answer.append(3)
-        
-    return answer
+    max_count = max(count)
+    
+    return [i+1 for i, c in enumerate(count) if c == max_count]
+            
             
             
     
