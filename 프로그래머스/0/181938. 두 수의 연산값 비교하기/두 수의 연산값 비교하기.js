@@ -3,11 +3,5 @@ function solution(a, b) {
     let temp = (+(a.toString() + b.toString()))
     let mul_temp = 2*a*b
     
-    if (temp > mul_temp){
-        answer = temp
-    }
-    else {
-        answer = mul_temp
-    }
-    return answer;
+    return temp > mul_temp? temp : mul_temp
 }
